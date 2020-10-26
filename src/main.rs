@@ -109,7 +109,8 @@ mod panic_wait;
 ///
 /// - Only a single core must be active and running this function.
 unsafe fn kernel_init() -> ! {
-    println!("[0] Hello from Rust!");
+    println!("[0] Hello from pure Rust!");
 
-    panic!("Stopping here.")
+    println!("[1] Stopping here.");
+    cpu::wait_forever()
 }
